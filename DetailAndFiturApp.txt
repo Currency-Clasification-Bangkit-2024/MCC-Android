@@ -1,0 +1,4 @@
+1. Buka kamera
+2. Scan uang
+3. Fitur flash secara default
+4. mengeluarkan suara dan teks Ketika berhasil di pindai
