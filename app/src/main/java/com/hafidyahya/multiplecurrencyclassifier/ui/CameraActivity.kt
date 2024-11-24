@@ -54,7 +54,6 @@ class CameraActivity : AppCompatActivity() {
                 .build()
                 .also {
                     it.setAnalyzer(cameraExecutor, ImageAnalyzer { bitmap ->
-                        // Di sini Anda bisa mengolah Bitmap, misalnya mengirim ke API
                         Log.d("CameraX", "Bitmap dihasilkan: ${bitmap.width}x${bitmap.height}")
                     })
                 }
