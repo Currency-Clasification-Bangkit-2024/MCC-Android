@@ -4,5 +4,5 @@
     <string name="title_app">MultipleCurrencyClassifier</string>
     <string name="logo_aplikasi">Logo Aplikasi</string>
     <string name="progress_text">Mendeteksi Uang.....</string>
-    <string name="result_text">Hasil Deteksi</string>
+    <string name="result_text">-----------------</string>
 </resources>

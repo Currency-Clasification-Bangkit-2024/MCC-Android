@@ -34,14 +34,44 @@
         <!-- Judul -->
         <TextView
             android:id="@+id/headerTitle"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="@string/progress_text"
             android:textColor="#333333"
             android:textSize="18sp"
             android:fontFamily="sans-serif-medium"
             android:gravity="center_vertical"
+            android:layout_weight="1"
             android:layout_marginStart="16dp" />
+
+        <!-- Switch Flash -->
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="end"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp">
+
+            <!-- Switch untuk Flash -->
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/flashSwitch"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="7dp"
+                android:layout_height="wrap_content"
+                android:checked="true" />
+
+            <!-- Ikon Flash -->
+            <ImageView
+                android:id="@+id/flashIcon"
+                android:layout_marginTop="14dp"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/baseline_flash_on_24"
+                android:contentDescription="Flash Icon"
+                android:tint="#333333"
+                android:layout_marginStart="4dp"/>
+        </LinearLayout>
     </LinearLayout>
 
     <!-- Preview Kamera -->
@@ -85,6 +115,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/result_text"
+            android:layout_marginTop="5dp"
             android:textColor="#333333"
             android:textSize="20sp"
             android:gravity="center_vertical"
