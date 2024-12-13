@@ -144,14 +144,11 @@ class CameraActivity : AppCompatActivity() {
                 .build()
                 .also {
                     it.setAnalyzer(cameraExecutor, ImageAnalyzer { bitmap ->
-<<<<<<< HEAD
                         if (!isProcessing) {
                             isProcessing = true
                             processImage(bitmap)
                         }
-=======
                         Log.d("CameraX", "Bitmap dihasilkan: ${bitmap.width}x${bitmap.height}")
->>>>>>> 65ca5b224f8d966a8d6302f7d8e47e344788a7ba
                     })
                 }
 

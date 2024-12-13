@@ -1,26 +1,28 @@
 package com.hafidyahya.multiplecurrencyclassifier.ui
 
-import android.content.Intent
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
-import android.view.animation.AnimationUtils
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
-import com.hafidyahya.multiplecurrencyclassifier.R
+import com.google.android.material.tabs.TabLayoutMediator
+import com.hafidyahya.multiplecurrencyclassifier.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+    private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        val logo = findViewById<ImageView>(R.id.logo)
-        val animation = AnimationUtils.loadAnimation(this, R.anim.scale_up)
-        logo.startAnimation(animation)
+        val adapter = ViewPagerAdapter(this)
+        binding.viewPager.adapter = adapter
 
-        Handler(Looper.getMainLooper()).postDelayed({
-            startActivity(Intent(this, CameraActivity::class.java))
-            finish()
-        }, 1900) // 3 detik delay
+        // Hubungkan TabLayout dengan ViewPager2
+        TabLayoutMediator(binding.tabLayout, binding.viewPager) { tab, position ->
+            tab.text = when (position) {
+                0 -> "Single Image"
+                1 -> "Multiple Images"
+                else -> null
+            }
+        }.attach()
     }
 }
